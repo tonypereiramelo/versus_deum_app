@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'failures.freezed.dart';
 
 @freezed
-abstract class ValueFailure<T> with _$ValueFailure {
+abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.empty({
     required T failedValue,
   }) = Empty<T>;
@@ -13,4 +13,8 @@ abstract class ValueFailure<T> with _$ValueFailure {
   const factory ValueFailure.invalidPassword({
     required T failedValue,
   }) = InvalidPassword<T>;
+  const factory ValueFailure.shortText({
+    required T failedValue,
+    required int min,
+  }) = ShortText<T>;
 }
