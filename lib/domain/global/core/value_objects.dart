@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:uuid/uuid.dart';
 import 'package:versus_deum_app/domain/global/core/errors.dart';
 import 'package:versus_deum_app/domain/global/core/failures.dart';
 
@@ -24,4 +25,22 @@ abstract class ValueObject<T> {
 
   @override
   String toString() => 'Value(value: $value)';
+}
+
+class UniqueId extends ValueObject {
+  const UniqueId._(this.value);
+
+  factory UniqueId() {
+    return UniqueId._(
+      right(const Uuid().v1()),
+    );
+  }
+  factory UniqueId.fromUniqueString(String uniqueId) {
+    return UniqueId._(
+      right(uniqueId),
+    );
+  }
+
+  @override
+  final Either<ValueFailure, dynamic> value;
 }
