@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Ad Orientem',
+      title: 'Versus Deum',
       theme: ThemeData(
         primaryColor: Colors.purple[500],
         scaffoldBackgroundColor: Colors.grey,
