@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:versus_deum_app/domain/auth/auth_failure.dart';
-import 'package:versus_deum_app/domain/auth/user.dart';
+import 'package:versus_deum_app/domain/auth/auth_user.dart';
 import 'package:versus_deum_app/domain/auth/value_objects.dart';
 
 abstract class IAuthFacade {
-  Future<Option<UserDomain>> getSignedInUser();
+  Future<Option<AuthUser>> getSignedInUser();
   Future<Either<AuthFailure, Unit>> regsterWithEmailAndPassword({
     required EmailAddress emailAddress,
     required Password password,
