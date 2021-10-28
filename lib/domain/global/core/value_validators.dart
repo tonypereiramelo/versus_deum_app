@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:versus_deum_app/domain/global/core/failures.dart';
 
-Either<ValueFailure<String>, String> validateStringIsNotEmpty(String input) {
+Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   if (input.isNotEmpty) {
     return right(input);
   } else {
@@ -36,5 +36,18 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     return right(input);
   } else {
     return left(ValueFailure.invalidPassword(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateUsername(
+  String input,
+) {
+  const usernameRegex = r'^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$';
+  if (RegExp(usernameRegex).hasMatch(input)) {
+    return right(input);
+  } else {
+    return left(
+      ValueFailure.invalidUserName(failedValue: input),
+    );
   }
 }

@@ -17,4 +17,7 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
     required int min,
   }) = ShortText<T>;
+  const factory ValueFailure.invalidUserName({
+    required T failedValue,
+  }) = InvalidUserName<T>;
 }
