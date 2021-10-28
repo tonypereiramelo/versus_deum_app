@@ -1,6 +1,6 @@
 import 'package:versus_deum_app/domain/global/core/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:versus_deum_app/domain/global/core/value_objects.dart';
+import 'package:versus_deum_app/domain/global/core/value_object.dart';
 import 'package:versus_deum_app/domain/global/core/value_validators.dart';
 
 class Username extends ValueObject<String> {
