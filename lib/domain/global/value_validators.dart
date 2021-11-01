@@ -34,6 +34,24 @@ Either<ValueFailure<String>, String> validateMaxStringLength(
   }
 }
 
+Either<ValueFailure<String>, String> validateMinStringLength(
+  String input,
+  int maxLength,
+) {
+  if (input.length <= maxLength) {
+    return right(input);
+  } else {
+    return left(
+      ValueFailure.global(
+        GlobalValueFailure.exceedingLength(
+          failedValue: input,
+          max: maxLength,
+        ),
+      ),
+    );
+  }
+}
+
 Either<ValueFailure<String>, String> validateHasDisplayNameValidCharacters(
   String input,
 ) {

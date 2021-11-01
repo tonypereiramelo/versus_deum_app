@@ -11,3 +11,7 @@ const int maxDisplayNameLength = 55;
 
 const String usernameRegex = r'^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$';
 const int maxUsernameLength = 30;
+
+const int maxTitleLength = 30;
+
+const int minLongTextLength = 30;

@@ -44,3 +44,25 @@ class Email extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 }
+
+class Title extends ValueObject<String> {
+  factory Title(String input) => Title._(
+        validateMaxStringLength(input, maxTitleLength)
+            .flatMap(validateStringNotEmpty),
+      );
+  const Title._(this.value);
+
+  @override
+  final Either<ValueFailure<String>, String> value;
+}
+
+class LongText extends ValueObject<String> {
+  factory LongText(String input) => LongText._(
+        validateMinStringLength(input, minLongTextLength)
+            .flatMap(validateStringNotEmpty),
+      );
+  const LongText._(this.value);
+
+  @override
+  final Either<ValueFailure<String>, String> value;
+}
