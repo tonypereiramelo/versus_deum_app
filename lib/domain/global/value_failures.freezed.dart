@@ -56,6 +56,13 @@ class _$GlobalValueFailureTearOff {
       length: length,
     );
   }
+
+  _SpecialCharacterNotAllowed<T> specialCharacterNotAllowed<T>(
+      {required T failedValue}) {
+    return _SpecialCharacterNotAllowed<T>(
+      failedValue: failedValue,
+    );
+  }
 }
 
 /// @nodoc
@@ -71,6 +78,7 @@ mixin _$GlobalValueFailure<T> {
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue, int length) incompatibleLength,
+    required TResult Function(T failedValue) specialCharacterNotAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +89,7 @@ mixin _$GlobalValueFailure<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,6 +100,7 @@ mixin _$GlobalValueFailure<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -102,6 +112,8 @@ mixin _$GlobalValueFailure<T> {
     required TResult Function(_ExceedingLength<T> value) exceedingLength,
     required TResult Function(_Multiline<T> value) multiline,
     required TResult Function(_IncompatibleLength<T> value) incompatibleLength,
+    required TResult Function(_SpecialCharacterNotAllowed<T> value)
+        specialCharacterNotAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -112,6 +124,8 @@ mixin _$GlobalValueFailure<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -122,6 +136,8 @@ mixin _$GlobalValueFailure<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -216,6 +232,7 @@ class _$_Unexpected<T> implements _Unexpected<T> {
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue, int length) incompatibleLength,
+    required TResult Function(T failedValue) specialCharacterNotAllowed,
   }) {
     return unexpected(failedValue);
   }
@@ -229,6 +246,7 @@ class _$_Unexpected<T> implements _Unexpected<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
   }) {
     return unexpected?.call(failedValue);
   }
@@ -242,6 +260,7 @@ class _$_Unexpected<T> implements _Unexpected<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -259,6 +278,8 @@ class _$_Unexpected<T> implements _Unexpected<T> {
     required TResult Function(_ExceedingLength<T> value) exceedingLength,
     required TResult Function(_Multiline<T> value) multiline,
     required TResult Function(_IncompatibleLength<T> value) incompatibleLength,
+    required TResult Function(_SpecialCharacterNotAllowed<T> value)
+        specialCharacterNotAllowed,
   }) {
     return unexpected(this);
   }
@@ -272,6 +293,8 @@ class _$_Unexpected<T> implements _Unexpected<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
   }) {
     return unexpected?.call(this);
   }
@@ -285,6 +308,8 @@ class _$_Unexpected<T> implements _Unexpected<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -373,6 +398,7 @@ class _$_Empty<T> implements _Empty<T> {
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue, int length) incompatibleLength,
+    required TResult Function(T failedValue) specialCharacterNotAllowed,
   }) {
     return empty(failedValue);
   }
@@ -386,6 +412,7 @@ class _$_Empty<T> implements _Empty<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
   }) {
     return empty?.call(failedValue);
   }
@@ -399,6 +426,7 @@ class _$_Empty<T> implements _Empty<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -416,6 +444,8 @@ class _$_Empty<T> implements _Empty<T> {
     required TResult Function(_ExceedingLength<T> value) exceedingLength,
     required TResult Function(_Multiline<T> value) multiline,
     required TResult Function(_IncompatibleLength<T> value) incompatibleLength,
+    required TResult Function(_SpecialCharacterNotAllowed<T> value)
+        specialCharacterNotAllowed,
   }) {
     return empty(this);
   }
@@ -429,6 +459,8 @@ class _$_Empty<T> implements _Empty<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
   }) {
     return empty?.call(this);
   }
@@ -442,6 +474,8 @@ class _$_Empty<T> implements _Empty<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -532,6 +566,7 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue, int length) incompatibleLength,
+    required TResult Function(T failedValue) specialCharacterNotAllowed,
   }) {
     return invalidEmail(failedValue);
   }
@@ -545,6 +580,7 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -558,6 +594,7 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -575,6 +612,8 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
     required TResult Function(_ExceedingLength<T> value) exceedingLength,
     required TResult Function(_Multiline<T> value) multiline,
     required TResult Function(_IncompatibleLength<T> value) incompatibleLength,
+    required TResult Function(_SpecialCharacterNotAllowed<T> value)
+        specialCharacterNotAllowed,
   }) {
     return invalidEmail(this);
   }
@@ -588,6 +627,8 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
   }) {
     return invalidEmail?.call(this);
   }
@@ -601,6 +642,8 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -699,6 +742,7 @@ class _$_ExceedingLength<T> implements _ExceedingLength<T> {
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue, int length) incompatibleLength,
+    required TResult Function(T failedValue) specialCharacterNotAllowed,
   }) {
     return exceedingLength(failedValue, max);
   }
@@ -712,6 +756,7 @@ class _$_ExceedingLength<T> implements _ExceedingLength<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
   }) {
     return exceedingLength?.call(failedValue, max);
   }
@@ -725,6 +770,7 @@ class _$_ExceedingLength<T> implements _ExceedingLength<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -742,6 +788,8 @@ class _$_ExceedingLength<T> implements _ExceedingLength<T> {
     required TResult Function(_ExceedingLength<T> value) exceedingLength,
     required TResult Function(_Multiline<T> value) multiline,
     required TResult Function(_IncompatibleLength<T> value) incompatibleLength,
+    required TResult Function(_SpecialCharacterNotAllowed<T> value)
+        specialCharacterNotAllowed,
   }) {
     return exceedingLength(this);
   }
@@ -755,6 +803,8 @@ class _$_ExceedingLength<T> implements _ExceedingLength<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
   }) {
     return exceedingLength?.call(this);
   }
@@ -768,6 +818,8 @@ class _$_ExceedingLength<T> implements _ExceedingLength<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -860,6 +912,7 @@ class _$_Multiline<T> implements _Multiline<T> {
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue, int length) incompatibleLength,
+    required TResult Function(T failedValue) specialCharacterNotAllowed,
   }) {
     return multiline(failedValue);
   }
@@ -873,6 +926,7 @@ class _$_Multiline<T> implements _Multiline<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
   }) {
     return multiline?.call(failedValue);
   }
@@ -886,6 +940,7 @@ class _$_Multiline<T> implements _Multiline<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (multiline != null) {
@@ -903,6 +958,8 @@ class _$_Multiline<T> implements _Multiline<T> {
     required TResult Function(_ExceedingLength<T> value) exceedingLength,
     required TResult Function(_Multiline<T> value) multiline,
     required TResult Function(_IncompatibleLength<T> value) incompatibleLength,
+    required TResult Function(_SpecialCharacterNotAllowed<T> value)
+        specialCharacterNotAllowed,
   }) {
     return multiline(this);
   }
@@ -916,6 +973,8 @@ class _$_Multiline<T> implements _Multiline<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
   }) {
     return multiline?.call(this);
   }
@@ -929,6 +988,8 @@ class _$_Multiline<T> implements _Multiline<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (multiline != null) {
@@ -1029,6 +1090,7 @@ class _$_IncompatibleLength<T> implements _IncompatibleLength<T> {
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue, int length) incompatibleLength,
+    required TResult Function(T failedValue) specialCharacterNotAllowed,
   }) {
     return incompatibleLength(failedValue, length);
   }
@@ -1042,6 +1104,7 @@ class _$_IncompatibleLength<T> implements _IncompatibleLength<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
   }) {
     return incompatibleLength?.call(failedValue, length);
   }
@@ -1055,6 +1118,7 @@ class _$_IncompatibleLength<T> implements _IncompatibleLength<T> {
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (incompatibleLength != null) {
@@ -1072,6 +1136,8 @@ class _$_IncompatibleLength<T> implements _IncompatibleLength<T> {
     required TResult Function(_ExceedingLength<T> value) exceedingLength,
     required TResult Function(_Multiline<T> value) multiline,
     required TResult Function(_IncompatibleLength<T> value) incompatibleLength,
+    required TResult Function(_SpecialCharacterNotAllowed<T> value)
+        specialCharacterNotAllowed,
   }) {
     return incompatibleLength(this);
   }
@@ -1085,6 +1151,8 @@ class _$_IncompatibleLength<T> implements _IncompatibleLength<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
   }) {
     return incompatibleLength?.call(this);
   }
@@ -1098,6 +1166,8 @@ class _$_IncompatibleLength<T> implements _IncompatibleLength<T> {
     TResult Function(_ExceedingLength<T> value)? exceedingLength,
     TResult Function(_Multiline<T> value)? multiline,
     TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
     required TResult orElse(),
   }) {
     if (incompatibleLength != null) {
@@ -1116,4 +1186,178 @@ abstract class _IncompatibleLength<T> implements GlobalValueFailure<T> {
   @JsonKey(ignore: true)
   _$IncompatibleLengthCopyWith<T, _IncompatibleLength<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SpecialCharacterNotAllowedCopyWith<T, $Res> {
+  factory _$SpecialCharacterNotAllowedCopyWith(
+          _SpecialCharacterNotAllowed<T> value,
+          $Res Function(_SpecialCharacterNotAllowed<T>) then) =
+      __$SpecialCharacterNotAllowedCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$SpecialCharacterNotAllowedCopyWithImpl<T, $Res>
+    extends _$GlobalValueFailureCopyWithImpl<T, $Res>
+    implements _$SpecialCharacterNotAllowedCopyWith<T, $Res> {
+  __$SpecialCharacterNotAllowedCopyWithImpl(
+      _SpecialCharacterNotAllowed<T> _value,
+      $Res Function(_SpecialCharacterNotAllowed<T>) _then)
+      : super(_value, (v) => _then(v as _SpecialCharacterNotAllowed<T>));
+
+  @override
+  _SpecialCharacterNotAllowed<T> get _value =>
+      super._value as _SpecialCharacterNotAllowed<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_SpecialCharacterNotAllowed<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SpecialCharacterNotAllowed<T>
+    implements _SpecialCharacterNotAllowed<T> {
+  const _$_SpecialCharacterNotAllowed({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'GlobalValueFailure<$T>.specialCharacterNotAllowed(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SpecialCharacterNotAllowed<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SpecialCharacterNotAllowedCopyWith<T, _SpecialCharacterNotAllowed<T>>
+      get copyWith => __$SpecialCharacterNotAllowedCopyWithImpl<T,
+          _SpecialCharacterNotAllowed<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T? failedValue) unexpected,
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue, int max) exceedingLength,
+    required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue, int length) incompatibleLength,
+    required TResult Function(T failedValue) specialCharacterNotAllowed,
+  }) {
+    return specialCharacterNotAllowed(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? unexpected,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
+  }) {
+    return specialCharacterNotAllowed?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T? failedValue)? unexpected,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue, int length)? incompatibleLength,
+    TResult Function(T failedValue)? specialCharacterNotAllowed,
+    required TResult orElse(),
+  }) {
+    if (specialCharacterNotAllowed != null) {
+      return specialCharacterNotAllowed(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected<T> value) unexpected,
+    required TResult Function(_Empty<T> value) empty,
+    required TResult Function(_InvalidEmail<T> value) invalidEmail,
+    required TResult Function(_ExceedingLength<T> value) exceedingLength,
+    required TResult Function(_Multiline<T> value) multiline,
+    required TResult Function(_IncompatibleLength<T> value) incompatibleLength,
+    required TResult Function(_SpecialCharacterNotAllowed<T> value)
+        specialCharacterNotAllowed,
+  }) {
+    return specialCharacterNotAllowed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected<T> value)? unexpected,
+    TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalidEmail<T> value)? invalidEmail,
+    TResult Function(_ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_Multiline<T> value)? multiline,
+    TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
+  }) {
+    return specialCharacterNotAllowed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected<T> value)? unexpected,
+    TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalidEmail<T> value)? invalidEmail,
+    TResult Function(_ExceedingLength<T> value)? exceedingLength,
+    TResult Function(_Multiline<T> value)? multiline,
+    TResult Function(_IncompatibleLength<T> value)? incompatibleLength,
+    TResult Function(_SpecialCharacterNotAllowed<T> value)?
+        specialCharacterNotAllowed,
+    required TResult orElse(),
+  }) {
+    if (specialCharacterNotAllowed != null) {
+      return specialCharacterNotAllowed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SpecialCharacterNotAllowed<T> implements GlobalValueFailure<T> {
+  const factory _SpecialCharacterNotAllowed({required T failedValue}) =
+      _$_SpecialCharacterNotAllowed<T>;
+
+  T get failedValue;
+  @JsonKey(ignore: true)
+  _$SpecialCharacterNotAllowedCopyWith<T, _SpecialCharacterNotAllowed<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

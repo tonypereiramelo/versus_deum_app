@@ -24,4 +24,7 @@ abstract class GlobalValueFailure<T> with _$GlobalValueFailure<T> {
     required T failedValue,
     required int length,
   }) = _IncompatibleLength<T>;
+  const factory GlobalValueFailure.specialCharacterNotAllowed({
+    required T failedValue,
+  }) = _SpecialCharacterNotAllowed<T>;
 }
