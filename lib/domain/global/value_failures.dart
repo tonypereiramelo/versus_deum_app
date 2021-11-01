@@ -10,4 +10,7 @@ abstract class GlobalValueFailure<T> with _$GlobalValueFailure<T> {
   const factory GlobalValueFailure.empty({
     required T failedValue,
   }) = _Empty<T>;
+  const factory GlobalValueFailure.invalidEmail({
+    required T failedValue,
+  }) = _InvalidEmail<T>;
 }
