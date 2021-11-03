@@ -17,4 +17,10 @@ class AuthUser with _$AuthUser {
   Option<ValueFailure<dynamic>> get failureOption => uid.failureOrUnit
       .andThen(email.failureOrUnit)
       .fold((f) => some(f), (r) => none());
+
+  bool isValid() => failureOption.isNone();
+  bool isInvalid() => failureOption.isSome();
+
+  @override
+  String toString() => 'AuthUser(email: ${email.toString()})';
 }

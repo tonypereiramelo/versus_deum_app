@@ -117,11 +117,6 @@ class _$_AuthUser extends _AuthUser {
   final Email email;
 
   @override
-  String toString() {
-    return 'AuthUser(uid: $uid, email: $email)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
